@@ -78,6 +78,36 @@ declare global {
 
 
 import {
+  MySpinner as HelloWorld
+} from './components/hello-world/hello-world';
+
+declare global {
+  interface HTMLHelloWorldElement extends HelloWorld, HTMLStencilElement {
+  }
+  var HTMLHelloWorldElement: {
+    prototype: HTMLHelloWorldElement;
+    new (): HTMLHelloWorldElement;
+  };
+  interface HTMLElementTagNameMap {
+    "hello-world": HTMLHelloWorldElement;
+  }
+  interface ElementTagNameMap {
+    "hello-world": HTMLHelloWorldElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "hello-world": JSXElements.HelloWorldAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface HelloWorldAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   MyApp as MyApp
 } from './components/my-app/my-app';
 
